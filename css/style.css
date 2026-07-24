@@ -371,3 +371,52 @@ button { font:inherit; cursor:pointer; background:none; border:none; }
 @media (min-width:1100px) {
   .hero-copy h2 { font-size:3.2rem; }
 }
+/* ===== Hover polish ===== */
+.dashboard-link,
+.menu-toggle,
+.nav-links a,
+.btn,
+.card,
+.feature-panel {
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.dashboard-link:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.menu-toggle:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.nav-links a:hover {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  transform: translateX(2px);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.card:hover,
+.feature-panel:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-image,
+.project-card img {
+  transition: transform 300ms ease, filter 300ms ease;
+}
+
+.card:hover img,
+.hero-visual:hover .hero-image,
+.project-card:hover img {
+  transform: scale(1.03);
+  filter: saturate(1.03);
+}
