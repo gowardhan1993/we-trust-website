@@ -45,32 +45,32 @@
 </section>
 
     <section class="section intro-editorial">
-      <div class="container split-row">
-        <div class="info-panel">
-          <span class="tag">Who we are</span>
-          <h2>Simple, local, and people-focused.</h2>
-          <p>
-            WE-TRUST is a charitable trust that works for women’s welfare,
-            opportunity, and community support. The trust’s work includes
-            empowerment programmes, livelihood initiatives, and support for
-            deserving women and families.
-          </p>
-        </div>
+  <div class="container split-row about-split-divider">
+    <div class="info-panel">
+      <span class="tag">Who we are</span>
+      <h2>Simple, local, and people-focused.</h2>
+      <p>
+        WE-TRUST is a charitable trust that works for women’s welfare,
+        opportunity, and community support. The trust’s work includes
+        empowerment programmes, livelihood initiatives, and support for
+        deserving women and families.
+      </p>
+    </div>
 
-        <div class="info-panel">
-          <span class="tag">Location</span>
-          <h2>Based in Ambikapuram, Trichy.</h2>
-          <p>
-            WE-TRUST is publicly listed in Ambikapuram, Trichy. Volunteers can
-            connect with the trust, cash donations are accepted, and membership
-            does not require payment.
-          </p>
-          <div class="actions">
-            <a href="https://maps.app.goo.gl/KTfVpHTFJcJFNQr9A" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Open location</a>
-          </div>
-        </div>
+    <div class="info-panel">
+      <span class="tag">Location</span>
+      <h2>Based in Ambikapuram, Trichy.</h2>
+      <p>
+        WE-TRUST is publicly listed in Ambikapuram, Trichy. Volunteers can
+        connect with the trust, cash donations are accepted, and membership
+        does not require payment.
+      </p>
+      <div class="actions">
+        <a href="https://maps.app.goo.gl/KTfVpHTFJcJFNQr9A" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Open location</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
     <section class="section closing-cta">
       <div class="container closing-cta-wrap">
@@ -124,4 +124,38 @@
   max-width: 48ch;
   font-size: 20px;
   color: midnightblue;
+}
+
+.about-split-divider {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+.about-split-divider .info-panel:first-child {
+  border-right: 1px solid plum;
+  padding-right: 28px;
+}
+
+.about-split-divider .info-panel:last-child {
+  padding-left: 8px;
+}
+
+@media (max-width: 900px) {
+  .about-split-divider {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-split-divider .info-panel:first-child {
+    border-right: 0;
+    border-bottom: 1px solid plum;
+    padding-right: 0;
+    padding-bottom: 20px;
+  }
+
+  .about-split-divider .info-panel:last-child {
+    padding-left: 0;
+  }
 }
