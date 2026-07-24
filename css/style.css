@@ -485,3 +485,315 @@ ul { list-style: none; }
     aspect-ratio: 4 / 4.5;
   }
 }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.narrow {
+  max-width: 760px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffffff;
+  border-bottom: 1px solid #d9e4ef;
+}
+
+.header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.logo {
+  color: #c94068;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #23425d;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.light-section {
+  background: #fffdfd;
+}
+
+.soft-section {
+  background: #eef5fb;
+}
+
+.hero {
+  padding: 64px 0 56px;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.hero-copy {
+  max-width: 760px;
+}
+
+.tag {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #a53d86;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.15;
+  color: #16314a;
+}
+
+h1 {
+  max-width: 12ch;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+}
+
+h2 {
+  margin-bottom: 14px;
+  font-size: clamp(1.9rem, 3vw, 3rem);
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #173b52;
+}
+
+p {
+  margin: 0;
+}
+
+.lead {
+  max-width: 650px;
+  font-size: 18px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.primary {
+  background: #e84c6a;
+  color: #ffffff;
+}
+
+.secondary {
+  background: #ffffff;
+  color: #1f4f75;
+  border: 1px solid #b8cbe0;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d8e3ef;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.stat {
+  background: #ffffff;
+  border: 1px solid #d8e3ef;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.stat strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 24px;
+  color: #de5a2a;
+}
+
+.sdg-copy {
+  max-width: 760px;
+}
+
+.sdg-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.sdg {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.s1 {
+  background: #e5243b;
+}
+
+.s3 {
+  background: #4c9f38;
+}
+
+.s4 {
+  background: #c5192d;
+}
+
+.s5 {
+  background: #ff3a21;
+}
+
+.s6 {
+  background: #26bde2;
+}
+
+.s8 {
+  background: #a21942;
+}
+
+.s10 {
+  background: #dd1367;
+}
+
+.s17 {
+  background: #19486a;
+}
+
+.horizontal-cta {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.cta-text,
+.cta-buttons {
+  padding: 0;
+}
+
+.cta-buttons .actions {
+  margin-top: 18px;
+}
+
+.cta-buttons h2,
+.cta-text h2 {
+  font-size: clamp(1.6rem, 2.4vw, 2.3rem);
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .horizontal-cta {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    max-width: 16ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .section {
+    padding: 36px 0;
+  }
+
+  .hero {
+    padding: 44px 0 36px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
