@@ -950,7 +950,9 @@ table td {
   .form-box {
     padding: 22px;
   }
-  /* ===== Extra hover polish ===== */
+  
+}
+/* ===== Extra hover polish ===== */
 
 .nav-links a::after {
   content: "";
@@ -1061,5 +1063,4 @@ table td {
 
 .footer a:hover::after {
   width: 100%;
-}
 }
