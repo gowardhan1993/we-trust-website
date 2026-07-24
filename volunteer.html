@@ -124,29 +124,116 @@
     </section>
 
     <section class="section volunteer-form-section" id="volunteer-form">
-      <div class="container">
-        <div class="section-head volunteer-form-head">
-          <span class="tag">Application form</span>
-          <h2>Volunteer registration</h2>
-          <p class="section-copy">
-            Fill in the form below and WE-TRUST will review your response and contact you when suitable opportunities are available.
-          </p>
+  <div class="container">
+    <div class="section-head volunteer-form-head">
+      <span class="tag">Application form</span>
+      <h2>Volunteer registration</h2>
+      <p class="section-copy">
+        Fill in the form below. When you submit, your email app will open with your volunteer details ready to send.
+      </p>
+    </div>
+
+    <div class="volunteer-form-card">
+      <form
+        action="mailto:YOUR_EMAIL@gmail.com?subject=WE-TRUST Volunteer Application"
+        method="post"
+        enctype="text/plain"
+        class="volunteer-form-mailto">
+
+        <div class="volunteer-form-grid">
+          <div class="form-field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="Full Name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Email" required>
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="Phone Number" required>
+          </div>
+
+          <div class="form-field">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="Location" required>
+          </div>
+
+          <div class="form-field">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="Date of Birth">
+          </div>
+
+          <div class="form-field">
+            <label for="sex">Sex</label>
+            <select id="sex" name="Sex">
+              <option value="">Select</option>
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="bloodGroup">Blood Group</label>
+            <select id="bloodGroup" name="Blood Group">
+              <option value="">Select</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+              <option>O+</option>
+              <option>O-</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="interest">Area of Interest</label>
+            <select id="interest" name="Area of Interest" required>
+              <option value="">Select</option>
+              <option>Field Work</option>
+              <option>Events</option>
+              <option>Teaching</option>
+              <option>Fundraising</option>
+              <option>Admin Support</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="availability">Availability</label>
+            <select id="availability" name="Availability" required>
+              <option value="">Select</option>
+              <option>Weekdays</option>
+              <option>Weekends</option>
+              <option>Part-time</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="experience">Experience</label>
+            <textarea id="experience" name="Experience" rows="4" placeholder="Share any volunteer, teaching, event, fundraising, or community experience"></textarea>
+          </div>
+
+          <div class="form-field form-field-full">
+            <label for="message">How would you like to help?</label>
+            <textarea id="message" name="How they want to help" rows="5" placeholder="Tell us how you would like to support WE-TRUST"></textarea>
+          </div>
         </div>
 
-        <div class="google-form-wrap">
-          <iframe
-            src="https://docs.google.com/forms/d/e/1FAIpQLSeVvZ-jc1OqAxkJuhznMasFOUZMEi3s9wsM8x1eijUmIJJ83A/viewform?embedded=true"
-            class="google-form-frame"
-            title="WE-TRUST Volunteer Form"
-            loading="lazy"
-            frameborder="0"
-            marginheight="0"
-            marginwidth="0">
-            Loading…
-          </iframe>
+        <div class="volunteer-form-actions">
+          <button type="submit" class="btn btn-primary">Submit application</button>
         </div>
-      </div>
-    </section>
+      </form>
+    </div>
+  </div>
+</section>
 
     <section class="section closing-cta">
       <div class="container closing-cta-wrap">
