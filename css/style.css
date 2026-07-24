@@ -1088,24 +1088,7 @@ p {
   align-items: center;
 }
 
-.google-form-wrap {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 30px;
-  overflow: hidden;
-  border: 1px solid lavender;
-  box-shadow: 0 22px 50px lavender;
-}
 
-.google-form-frame {
-  display: block;
-  width: 100%;
-  height: 760px;
-  border: 0;
-  background: white;
-}
 
 @media (max-width: 1080px) {
   .volunteer-area-grid {
@@ -1127,8 +1110,85 @@ p {
   .volunteer-area-card {
     padding: 22px;
   }
+}
+.volunteer-form-card {
+  max-width: 980px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 30px;
+  padding: 32px;
+  border: 1px solid lavender;
+  box-shadow: 0 22px 50px lavender;
+}
 
-  .google-form-frame {
-    min-height: 680px;
+.volunteer-form-mailto {
+  width: 100%;
+}
+
+.volunteer-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-field-full {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  font-size: 14px;
+  font-weight: 800;
+  color: midnightblue;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid plum;
+  border-radius: 18px;
+  background: white;
+  color: midnightblue;
+  font: inherit;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: darkmagenta;
+  box-shadow: 0 0 0 4px lavenderblush;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.volunteer-form-actions {
+  margin-top: 26px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .volunteer-form-card {
+    padding: 22px;
+  }
+
+  .volunteer-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-full {
+    grid-column: auto;
   }
 }
