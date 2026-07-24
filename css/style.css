@@ -950,4 +950,116 @@ table td {
   .form-box {
     padding: 22px;
   }
+  /* ===== Extra hover polish ===== */
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.logo:hover strong {
+  color: var(--primary);
+}
+
+.card,
+.project-card,
+.stat-box,
+.info-box,
+.contact-box,
+.form-box,
+.highlight-box {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.card:hover,
+.project-card:hover,
+.stat-box:hover,
+.info-box:hover,
+.contact-box:hover,
+.form-box:hover,
+.highlight-box:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(139, 47, 74, 0.22);
+}
+
+.project-card img,
+.image-panel img,
+.gallery-large,
+.gallery-stack img,
+.hero-card img {
+  transition: transform 0.5s ease, filter 0.35s ease;
+}
+
+.project-card:hover img,
+.image-panel:hover img,
+.gallery-large:hover,
+.gallery-stack img:hover,
+.hero-card:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.05);
+}
+
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.22) 50%, transparent 100%);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.btn:hover::before {
+  transform: translateX(120%);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-light:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.highlight-item {
+  transition: transform 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-4px);
+}
+
+.footer a {
+  position: relative;
+}
+
+.footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1.5px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.footer a:hover::after {
+  width: 100%;
+}
 }
