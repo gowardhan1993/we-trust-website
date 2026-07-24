@@ -160,35 +160,36 @@
     }
 
   fetch("./data/projects.json")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Unable to load projects.json");
-        }
-        return response.json();
-      })
-      .then(data => {
-        let currentTab = "current";
-        renderProjects(data[tabMap[currentTab]], "Current projects");
-        setActiveTab(currentTab);
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Unable to load data/projects.json");
+    }
+    return response.json();
+  })
+  .then(data => {
+    let currentTab = "current";
+    renderProjects(data[tabMap[currentTab]], "Current projects");
+    setActiveTab(currentTab);
 
-        tabs.forEach(tab => {
-          tab.addEventListener("click", () => {
-            currentTab = tab.dataset.tab;
-            const label = tab.textContent.trim();
-            renderProjects(data[tabMap[currentTab]], label);
-            setActiveTab(currentTab);
-          });
-        });
-      })
-      .catch(() => {
-        projectsContent.innerHTML = `
-          <div class="empty-projects-state">
-            <span class="tag">Projects</span>
-            <h2>Unable to load projects.</h2>
-            <p>Please check that <strong>projects.json</strong> exists and contains valid project data.</p>
-          </div>
-        `;
+    tabs.forEach(tab => {
+      tab.addEventListener("click", () => {
+        currentTab = tab.dataset.tab;
+        const label = tab.textContent.trim();
+        renderProjects(data[tabMap[currentTab]], label);
+        setActiveTab(currentTab);
       });
+    });
+  })
+  .catch((error) => {
+    console.error(error);
+    projectsContent.innerHTML = `
+      <div class="empty-projects-state">
+        <span class="tag">Projects</span>
+        <h2>Unable to load projects.</h2>
+        <p>Please check that <strong>data/projects.json</strong> exists and contains valid project data.</p>
+      </div>
+    `;
+  });
   </script>
 </body>
 </html>
