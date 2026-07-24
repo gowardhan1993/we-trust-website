@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | WE-TRUST</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="page-projects">
+  <header class="site-header">
+    <div class="container header-wrap">
+      <a href="index.html" class="brand" target="_blank" rel="noopener noreferrer">
+        <img src="images/logo.png" alt="WE-TRUST logo" class="brand-logo" width="72" height="72" />
+        <div class="brand-text">
+          <span class="brand-name">WE-TRUST</span>
+          <span class="brand-subtitle">Women Empowerment Trust</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="about.html" target="_blank" rel="noopener noreferrer">About</a>
+        <a href="projects.html" target="_blank" rel="noopener noreferrer">Projects</a>
+        <a href="gallery.html" target="_blank" rel="noopener noreferrer">Gallery</a>
+        <a href="gratitude.html" target="_blank" rel="noopener noreferrer">Gratitude</a>
+        <a href="reports.html" target="_blank" rel="noopener noreferrer">Reports</a>
+        <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="volunteer.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Volunteer</a>
+        <a href="donate.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-premium about-hero-simple">
+      <div class="container about-hero-center">
+        <span class="tag">Projects</span>
+        <p class="lead about-lead-simple">
+          Current, completed, and upcoming work that supports women and communities.
+        </p>
+      </div>
+    </section>
+
+    <section class="section intro-editorial">
+      <div class="container">
+        <div class="projects-tabs" role="tablist" aria-label="Project categories">
+          <button class="project-tab is-active" type="button" data-tab="current">Current projects</button>
+          <button class="project-tab" type="button" data-tab="completed">Completed projects</button>
+          <button class="project-tab" type="button" data-tab="upcoming">Upcoming projects</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-premium projects-section-block">
+      <div class="container">
+        <div id="projects-content" class="projects-dynamic-wrap">
+          <div class="projects-loading">Loading projects...</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section closing-cta">
+      <div class="container closing-cta-wrap">
+        <div>
+          <span class="tag">Support the mission</span>
+          <h2>Stand with women-centered development.</h2>
+          <p class="section-copy">
+            Support livelihood, dignity, and opportunity through partnership, volunteering, and donations.
+          </p>
+        </div>
+
+        <div class="actions">
+          <a href="contact.html" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Contact us</a>
+          <a href="donate.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Donate</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <strong>WE-TRUST</strong>
+        <p>Women Empowerment Trust</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="about.html" target="_blank" rel="noopener noreferrer">About</a>
+        <a href="projects.html" target="_blank" rel="noopener noreferrer">Projects</a>
+        <a href="gallery.html" target="_blank" rel="noopener noreferrer">Gallery</a>
+        <a href="contact.html" target="_blank" rel="noopener noreferrer">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const projectsContent = document.getElementById("projects-content");
+    const tabs = document.querySelectorAll(".project-tab");
+
+    const tabMap = {
+      current: "currentProjects",
+      completed: "completedProjects",
+      upcoming: "upcomingProjects"
+    };
+
+    function createProjectCard(project) {
+      const details = Array.isArray(project.details) && project.details.length
+        ? `<ul class="project-detail-list">${project.details.map(item => `<li>${item}</li>`).join("")}</ul>`
+        : "";
+
+      return `
+        <article class="project-feature-card">
+          <div class="project-feature-media">
+            <img src="${project.image || 'images/gallery-1.jpg'}" alt="${project.title}" width="800" height="520" loading="lazy" />
+          </div>
+
+          <div class="project-feature-body">
+            <span class="tag">Project</span>
+            <h2>${project.title || "Untitled project"}</h2>
+
+            <div class="project-meta-grid">
+              ${project.date ? `<div><strong>Date</strong><span>${project.date}</span></div>` : ""}
+              ${project.location ? `<div><strong>Location</strong><span>${project.location}</span></div>` : ""}
+              ${project.partner ? `<div><strong>Partner</strong><span>${project.partner}</span></div>` : ""}
+              ${project.beneficiaries ? `<div><strong>Beneficiaries</strong><span>${project.beneficiaries}</span></div>` : ""}
+            </div>
+
+            ${project.summary ? `<p class="project-summary-text">${project.summary}</p>` : ""}
+            ${details}
+          </div>
+        </article>
+      `;
+    }
+
+    function renderProjects(projects, label) {
+      if (!projects || !projects.length) {
+        projectsContent.innerHTML = `
+          <div class="empty-projects-state">
+            <span class="tag">${label}</span>
+            <h2>No projects added yet.</h2>
+            <p>Add project details to <strong>projects.json</strong> and they will appear here.</p>
+          </div>
+        `;
+        return;
+      }
+
+      projectsContent.innerHTML = `
+        <div class="projects-list">
+          ${projects.map(createProjectCard).join("")}
+        </div>
+      `;
+    }
+
+    function setActiveTab(activeTab) {
+      tabs.forEach(tab => {
+        tab.classList.toggle("is-active", tab.dataset.tab === activeTab);
+      });
+    }
+
+    fetch("./projects.json")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Unable to load projects.json");
+        }
+        return response.json();
+      })
+      .then(data => {
+        let currentTab = "current";
+        renderProjects(data[tabMap[currentTab]], "Current projects");
+        setActiveTab(currentTab);
+
+        tabs.forEach(tab => {
+          tab.addEventListener("click", () => {
+            currentTab = tab.dataset.tab;
+            const label = tab.textContent.trim();
+            renderProjects(data[tabMap[currentTab]], label);
+            setActiveTab(currentTab);
+          });
+        });
+      })
+      .catch(() => {
+        projectsContent.innerHTML = `
+          <div class="empty-projects-state">
+            <span class="tag">Projects</span>
+            <h2>Unable to load projects.</h2>
+            <p>Please check that <strong>projects.json</strong> exists and contains valid project data.</p>
+          </div>
+        `;
+      });
+  </script>
+</body>
+</html>
