@@ -1,6 +1,7 @@
 {
-  "currentProjects": [
-    {
+  "currentProjects": [  ],
+  "completedProjects": [
+     {
       "title": "Distribution of Corona Relief Livelihood Essentials",
       "date": "10th October",
       "location": "Kundrandar Kovil block, Pudhukottai district",
@@ -16,6 +17,5 @@
       ]
     }
   ],
-  "completedProjects": [],
   "upcomingProjects": []
 }
