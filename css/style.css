@@ -1102,7 +1102,7 @@ p {
 .google-form-frame {
   display: block;
   width: 100%;
-  min-height: 1850px;
+  height: 760px;
   border: 0;
   background: white;
 }
@@ -1129,6 +1129,6 @@ p {
   }
 
   .google-form-frame {
-    min-height: 2100px;
+    min-height: 680px;
   }
 }
