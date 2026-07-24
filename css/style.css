@@ -1064,3 +1064,369 @@ table td {
 .footer a:hover::after {
   width: 100%;
 }
+
+/* ===== Mobile fix patch ===== */
+@media (max-width: 768px) {
+  .topbar {
+    font-size: 12px;
+    padding: 8px 0;
+  }
+
+  .topbar .container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+
+  .navbar {
+    padding: 14px 0;
+    align-items: center;
+  }
+
+  .logo strong {
+    font-size: 1.2rem;
+  }
+
+  .logo span {
+    font-size: 0.72rem;
+  }
+
+  .nav-cta {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .nav-cta .btn {
+    width: 100%;
+    padding: 13px 18px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 15px;
+  }
+
+  .hero {
+    padding: 28px 0 50px;
+  }
+
+  .hero-wrap {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero-copy {
+    order: 2;
+  }
+
+  .hero-visual {
+    order: 1;
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 12px;
+    padding: 8px 14px;
+    margin-bottom: 16px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2rem;
+    line-height: 1.08;
+    margin-bottom: 16px;
+  }
+
+  .hero-copy p {
+    font-size: 0.96rem;
+    margin-bottom: 22px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .hero-points {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-points li {
+    width: 100%;
+    text-align: center;
+    padding: 11px 14px;
+  }
+
+  .hero-card {
+    padding: 14px;
+    border-radius: 24px;
+  }
+
+  .hero-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 18px;
+  }
+
+  .floating-badge {
+    position: static;
+    width: 100%;
+    min-width: auto;
+    margin-top: 12px;
+    border-radius: 18px;
+    padding: 14px 16px;
+  }
+
+  .floating-badge strong {
+    font-size: 1.2rem;
+  }
+
+  .highlight-section {
+    margin-top: 0;
+  }
+
+  .highlight-box {
+    padding: 20px 16px;
+    border-radius: 22px;
+  }
+
+  .highlight-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .section,
+  .section-sm,
+  .page-hero {
+    padding: 52px 0;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .section-subtitle,
+  .content-panel p,
+  .card-text,
+  .project-card p {
+    font-size: 0.95rem;
+  }
+
+  .about-preview {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .image-panel {
+    padding: 12px;
+    border-radius: 22px;
+  }
+
+  .image-panel img {
+    height: 260px;
+    border-radius: 16px;
+  }
+
+  .mission-points {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin: 22px 0;
+  }
+
+  .mission-points li {
+    padding: 15px 16px;
+    font-size: 0.94rem;
+  }
+
+  .impact-strip {
+    padding: 22px 18px;
+    border-radius: 24px;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .impact-card strong {
+    font-size: 1.7rem;
+  }
+
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .stats-grid,
+  .info-grid,
+  .contact-grid,
+  .form-grid,
+  .footer-grid,
+  .gallery-preview {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card img {
+    height: 220px;
+  }
+
+  .card,
+  .stat-box,
+  .info-box,
+  .contact-box,
+  .form-box {
+    border-radius: 20px;
+  }
+
+  .card-body,
+  .stat-box,
+  .info-box,
+  .contact-box,
+  .form-box {
+    padding: 20px 18px;
+  }
+
+  .card-title {
+    font-size: 1.08rem;
+  }
+
+  .gallery-large {
+    height: 260px;
+    border-radius: 20px;
+  }
+
+  .gallery-stack {
+    gap: 18px;
+  }
+
+  .gallery-stack img {
+    height: 220px;
+    border-radius: 20px;
+  }
+
+  .cta-banner {
+    grid-template-columns: 1fr;
+    padding: 26px 20px;
+    border-radius: 24px;
+    gap: 18px;
+  }
+
+  .cta-banner h2 {
+    font-size: 1.9rem;
+  }
+
+  .cta-banner p {
+    font-size: 0.95rem;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+  }
+
+  .page-hero-box {
+    padding: 30px 20px;
+    border-radius: 24px;
+  }
+
+  .page-hero-box h1 {
+    font-size: 2rem;
+  }
+
+  table th,
+  table td {
+    padding: 14px 12px;
+    font-size: 14px;
+  }
+
+  .footer {
+    padding: 56px 0 22px;
+    margin-top: 50px;
+  }
+
+  .footer-grid {
+    gap: 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .spacer-24 {
+    height: 18px;
+  }
+
+  .spacer-32 {
+    height: 24px;
+  }
+
+  .spacer-48 {
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(94%, var(--container));
+  }
+
+  .hero-copy h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-title,
+  .cta-banner h2,
+  .page-hero-box h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-card img,
+  .project-card img,
+  .gallery-large,
+  .gallery-stack img,
+  .image-panel img {
+    height: 220px;
+  }
+
+  .impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .impact-card strong {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 13px 16px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+}
