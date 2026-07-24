@@ -167,8 +167,8 @@
     return response.json();
   })
   .then(data => {
-    let currentTab = "current";
-    renderProjects(data[tabMap[currentTab]], "Current projects");
+    let currentTab = "completed";
+renderProjects(data[tabMap[currentTab]], "Completed projects");
     setActiveTab(currentTab);
 
     tabs.forEach(tab => {
