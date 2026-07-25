@@ -1211,3 +1211,25 @@ p {
   opacity: 0.7;
   cursor: not-allowed;
 }
+.facebook-section {
+  padding-top: 0;
+}
+
+.facebook-embed-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.facebook-embed-wrap .fb-page {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .facebook-embed-wrap {
+    justify-content: stretch;
+  }
+}
+.social-connect-actions {
+  margin-top: 24px;
+}
