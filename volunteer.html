@@ -136,6 +136,11 @@
 
         <div class="volunteer-form-card">
           <form id="volunteerForm" class="volunteer-form-mailto" novalidate>
+            <input type="hidden" name="access_key" value="cc695ed4-cd8e-4380-af87-ab06d90dd74f" />
+            <input type="hidden" name="subject" value="New Volunteer Application - WE-TRUST" />
+            <input type="hidden" name="from_name" value="WE-TRUST Volunteer Form" />
+            <input type="checkbox" name="botcheck" style="display: none;" />
+
             <div class="volunteer-form-grid">
               <div class="form-field">
                 <label for="fullName">Full Name</label>
@@ -313,10 +318,11 @@
         submitBtn.textContent = 'Submitting...';
 
         try {
-          const response = await fetch('/api/volunteer', {
+          const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
             },
             body: JSON.stringify(payload)
           });
@@ -324,11 +330,11 @@
           const result = await response.json();
 
           if (response.ok && result.success) {
-            formStatus.textContent = result.message || 'Application submitted successfully.';
+            formStatus.textContent = 'Application submitted successfully.';
             formStatus.classList.add('success');
             volunteerForm.reset();
           } else {
-            formStatus.textContent = result.error || 'Submission failed. Please try again.';
+            formStatus.textContent = result.message || 'Submission failed. Please try again.';
             formStatus.classList.add('error');
           }
         } catch (error) {
